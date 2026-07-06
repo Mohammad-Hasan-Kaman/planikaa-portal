@@ -1,22 +1,21 @@
 # 🎓 Planikaa Portal
 
-> A comprehensive educational platform and desktop application built with **Django** and **PyQt6**, featuring exam analysis, blogging, student resources, and a modern user interface.
+> A comprehensive educational web platform built with **Django**, featuring exam analysis, blogging, student resources, and a modern user interface.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white)](https://python.org)
 [![Django](https://img.shields.io/badge/Django-4.2+-green.svg?logo=django)](https://www.djangoproject.com/)
-[![PyQt6](https://img.shields.io/badge/PyQt6-Multi--Platform-purple.svg?logo=qt)](https://riverbankcomputing.com/software/pyqt/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
 ## 🚀 Purpose & Target Audience
 
-**Planikaa Portal** is designed for students and educators seeking a unified platform for academic management, exam analysis, and resource sharing. It uniquely combines a **web-based backend (Django)** with a **desktop client (PyQt6)** for enhanced accessibility.
+**Planikaa Portal** is designed for students and educators seeking a unified platform for academic management, exam analysis, and resource sharing. It provides a powerful **web-based solution** accessible from any modern browser.
 
 | Audience | Usage Method |
 |----------|--------------|
-| **End Users** | Run the desktop application (if compiled) or access the web interface locally. |
-| **Developers** | Clone the repository, install dependencies, and configure `.env` to run the Django server and desktop client. |
+| **End Users** | Access the web interface locally or via server deployment. |
+| **Developers** | Clone the repository, install dependencies, and configure `.env` to run the Django server. |
 
 ---
 
@@ -31,8 +30,8 @@
 - 💬 **Review & Feedback System (`reviews`):**
   - Student and educator feedback loop for course improvement.
 - 🎨 **Modern & Responsive Interface:**
-  - **Web:** Clean Django templates with modern styling.
-  - **Desktop:** Native PyQt6 application for offline access and enhanced UX.
+  - Clean Django templates with modern styling and **Jalali (Persian) calendar** support.
+  - Fully responsive design for mobile, tablet, and desktop browsers.
 - 🛡️ **Secure Authentication:**
   - Powered by `django-allauth` for robust user management.
 - 📅 **Persian Calendar Integration:**
@@ -68,7 +67,8 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configure Environment Variables
-Create a `.env` file in the `edu/` directory:
+
+Create a `.env` file in the root directory:
 ```env
 SECRET_KEY=your-secret-key-here
 DEBUG=True
@@ -89,12 +89,6 @@ python manage.py runserver
 ```
 Access at `http://127.0.0.1:8000`
 
-**Option B: Desktop Client (if applicable)**
-```bash
-python manage.py run_qt  # Assuming a custom command or run the specific PyQt6 entry point
-```
-*(Check the project structure for the specific entry point script if different).*
-
 ---
 
 ## 🛠 Tech Stack & Libraries
@@ -102,7 +96,7 @@ python manage.py run_qt  # Assuming a custom command or run the specific PyQt6 e
 | Component | Technology |
 |-----------|------------|
 | **Backend** | Django 4.2+, Python 3.10+ |
-| **Desktop UI** | PyQt6, Qt6 |
+| **Web UI** | Django Templates, HTML5, CSS3, JavaScript |
 | **Authentication** | django-allauth, PyJWT |
 | **Database** | SQLite (Dev), PostgreSQL (Prod) |
 | **Localization** | jdatetime, jalali_core |
@@ -114,7 +108,7 @@ python manage.py run_qt  # Assuming a custom command or run the specific PyQt6 e
 ## 📂 Project Structure
 
 ```
-edu/
+planikaa-portal/
 ├── analyzer/          # Exam analysis logic
 ├── blog/              # Blogging module
 ├── konkur/            # Competition/Exam management
