@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://planikaa.ir/sitemap.xml
