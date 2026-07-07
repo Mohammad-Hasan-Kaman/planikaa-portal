@@ -5,6 +5,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white)](https://python.org)
 [![Django](https://img.shields.io/badge/Django-4.2+-green.svg?logo=django)](https://www.djangoproject.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Mohammad-Hasan-Kaman/planikaa-portal?color=blue)](https://github.com/Mohammad-Hasan-Kaman/planikaa-portal/releases)
+
 
 ---
 
