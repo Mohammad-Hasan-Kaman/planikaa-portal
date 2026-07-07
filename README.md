@@ -142,7 +142,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 If you find this tool useful, please give it a **star**! ⭐
 
-[![Star History](https://api.star-history.com/svg?repos=Mohammad-Hasan-Kaman/planikaa-portal&type=Date)](https://star-history.com/#Mohammad-Hasan-Kaman/planikaa-portal&Date)
+[![Star History](https://api.star-history.com/svg?repos=planikaa-portal&type=Date)](https://star-history.com/#planikaa-portal&Date)
 
 ---
 *Maintained by Mohammad Hasan Kaman | Last updated: July 2026*
