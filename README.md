@@ -147,6 +147,6 @@ If you find this tool useful, please give it a **star**! ⭐
 [![Stars](https://img.shields.io/github/stars/Mohammad-Hasan-Kaman/planikaa-portal?style=for-the-badge&logo=github&color=blue)](https://github.com/Mohammad-Hasan-Kaman/planikaa-portal/stargazers)
 
 ---
-*Maintained by Mohammad Hasan Kaman | Last updated: July 2026*
+*Maintained by Mohammad Hasan Kaman | Last updated: October 2026*
 
 > **Note:** This project is a work in progress. Some features may be under development or testing.
