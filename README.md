@@ -1,6 +1,6 @@
 # 🎓 Planikaa Portal
 
-> A comprehensive educational web platform built with **Django**, featuring exam analysis, blogging, student resources, and a modern user interface.
+> An educational web platform built with **Django**, featuring exam and competition analysis, an educational blog, a review system, and Jalali (Persian) calendar support.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white)](https://python.org)
 [![Django](https://img.shields.io/badge/Django-4.2+-green.svg?logo=django)](https://www.djangoproject.com/)
@@ -12,7 +12,7 @@
 
 ## 🚀 Purpose & Target Audience
 
-**Planikaa Portal** is designed for students and educators seeking a unified platform for academic management, exam analysis, and resource sharing. It provides a powerful **web-based solution** accessible from any modern browser.
+**Planikaa Portal** is designed for students and educators seeking a unified platform for academic management, exam and competition analysis, and written feedback. It provides a **web-based solution** accessible from any modern browser.
 
 | Audience | Usage Method |
 |----------|--------------|
@@ -27,8 +27,8 @@
   - Advanced tools for analyzing exam results and competition data.
   - Visual dashboards and statistical reporting.
 - 📝 **Educational Blog (`blog`):**
-  - Share articles, tutorials, and educational content.
-  - Integrated with user authentication and comments.
+  - Publish articles and tutorials as categories and dated posts.
+  - Each article has its own detail page addressed by slug.
 - 💬 **Review & Feedback System (`reviews`):**
   - Student and educator feedback loop for course improvement.
 - 🎨 **Modern & Responsive Interface:**
@@ -45,13 +45,12 @@
 
 ### Prerequisites
 - **Python 3.10+**
-- **PostgreSQL** (Recommended for production, SQLite for development)
-- **Node.js** (Optional, for static assets if pre-processed)
+- **SQLite** (the only database backend the project is configured for)
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Mohammad-Hasan-Kaman/planikaa-portal.git
-cd planikaa-portal/edu
+cd planikaa-portal
 ```
 
 ### 2. Create Virtual Environment
@@ -70,13 +69,23 @@ pip install -r requirements.txt
 
 ### 4. Configure Environment Variables
 
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory (it is loaded automatically with `python-dotenv`):
 ```env
 SECRET_KEY=your-secret-key-here
-DEBUG=True
-DATABASE_URL=sqlite:///db.sqlite3
-# Add other necessary variables (API keys, etc.)
+
+# SMTP for django-allauth email confirmation and password reset
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
+
+# Optional social login (django-allauth)
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+MICROSOFT_CLIENT_ID=
+MICROSOFT_CLIENT_SECRET=
 ```
+
+`SECRET_KEY` is the only required variable. The OAuth and email variables are
+needed only if you enable those sign-in methods.
 
 ### 5. Run Migrations
 ```bash
@@ -99,11 +108,10 @@ Access at `http://127.0.0.1:8000`
 |-----------|------------|
 | **Backend** | Django 4.2+, Python 3.10+ |
 | **Web UI** | Django Templates, HTML5, CSS3, JavaScript |
-| **Authentication** | django-allauth, PyJWT |
-| **Database** | SQLite (Dev), PostgreSQL (Prod) |
+| **Authentication** | django-allauth (email + Google/Microsoft OAuth), Argon2, passlib |
+| **Database** | SQLite |
 | **Localization** | jdatetime, jalali_core |
-| **Data Analysis** | Pillow, Pygments (syntax highlighting) |
-| **Security** | Argon2, cryptography, passlib |
+| **Data Analysis** | Pillow (article images) |
 
 ---
 
@@ -111,14 +119,15 @@ Access at `http://127.0.0.1:8000`
 
 ```
 planikaa-portal/
-├── analyzer/          # Exam analysis logic
-├── blog/              # Blogging module
-├── konkur/            # Competition/Exam management
-├── reviews/           # Feedback system
-├── core/              # Core utilities and shared logic
-├── static/            # Static assets (CSS, JS, images)
-├── templates/         # HTML templates
-├── media/             # User-uploaded files (excluded from git)
+├── analyzer/          # Exam analysis: dashboards, reports, saved exams, profiles
+├── blog/              # Educational blog: articles and categories
+├── konkur/            # Competition management and its admin panel
+├── reviews/           # Review and feedback system
+├── core/              # Shared logic and the about-us page
+├── templates/         # HTML templates (analyzer, blog, reviews, account, core)
+├── fonts/             # Bundled font files
+├── public/            # Public static assets
+├── passenger_wsgi.py  # WSGI entry point for Passenger
 ├── manage.py          # Django management script
 ├── requirements.txt   # Python dependencies
 ├── .env               # Environment variables (DO NOT COMMIT)
