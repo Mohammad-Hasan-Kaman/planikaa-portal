@@ -1,3 +1,9 @@
+### 🌐 Telegram: [@mohaka_programmer](https://t.me/mohaka_programmer)
+
+[![Telegram](https://img.shields.io/badge/Telegram-%40mohaka__programmer-2CA5E0?logo=telegram&logoColor=white)](https://t.me/mohaka_programmer)
+
+---
+
 # 🎓 Planikaa Portal
 
 > An educational web platform built with **Django**, featuring exam and competition analysis, an educational blog, a review system, and Jalali (Persian) calendar support.
